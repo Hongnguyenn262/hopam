@@ -1,4 +1,4 @@
-<script>
+
 /* ===== Bảng voicing cho hợp âm ===== */
 const chordShapes = {
   "A":["A","A:2","A:3","A:4","A:5","A:6","A:7"],
@@ -231,4 +231,3 @@ document.addEventListener("DOMContentLoaded", () => {
   if (printBtn) printBtn.addEventListener("click", printSong);
   if (lyricsBtn) lyricsBtn.addEventListener("click", toggleLyricsOnly);
 });
-</script>
