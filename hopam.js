@@ -51,7 +51,9 @@ const chordShapes = {
   "F#7":["F#7","F#7:2","F#7:3","F#7:4","F#7:5","F#7:6","F#7:9"],
   "Gb7":["Gb7","Gb7:2","Gb7:3","Gb7:4","Gb7:5","Gb7:6","Gb7:9"],
   "G7":["G7","G7:2","G7:3","G7:4","G7:5","G7:6","G7:7","G7:9","G7:10"],
-  "Asus2":["Asus2","Asus2:2","Asus2:3","Asus2:4","Asus2:5"]
+  "Asus2":["Asus2","Asus2:2","Asus2:3","Asus2:4","Asus2:5"],
+  "Cmaj7":["Cmaj7","Cmaj7:2","Cmaj7:3","Cmaj7:4","Cmaj7:5"],
+  "Bsus4":["Bsus4","Bsus4:2","Bsus4:3","Bsus4:4","Bsus4:5"],
 };
 
 /* ===== Biến dùng chung ===== */
