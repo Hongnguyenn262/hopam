@@ -150,7 +150,8 @@ document.addEventListener("DOMContentLoaded", function() {
 "thai-khang":"Thái Khang", "thanh-son":"Thanh Sơn", "dinh-van":"Đình Văn", "vo-thien-thanh":"Võ Thiện Thanh", "tran-minh-phi":"Trần Minh Phi", "lu-nhat-vu":"Lư Nhất Vũ", "hoang-hiep":"Hoàng Hiệp", "ngan-giang":"Ngân Giang", "nguyen-cuong":"Nguyễn Cường",
 "son-ha":"Sơn Hạ", "trinh-dinh-quang":"Trịnh Đình Quang","truong-le":"Trường Lê", "huy-thuc":"Huy Thục", "le-chi-trung":"Lê Chí Trung", "truong-le-son":"Trương Lê Sơn", "pho-duc-phuong":"Phó Đức Phương", "thai-hung":"Thái Hùng",
 "vo-dong-dien":"Võ Đông Điền", "bao-thach":"Bảo Thạch", "chau-dang-khoa":"Châu Đăng Khoa", "hua-kim-tuyen":"Hứa Kim Tuyền", "pham-dinh-chuong":"Phạm Đình Chương", "manh-quynh":"Mạnh Quỳnh", "thanh-tung":"Thanh Tùng", "truc-phuong":"Trúc Phương",
-"tu-nhi":"Tú Nhi","bossa-nova":"Bossa Nova", "luu-hong":"Lưu Hồng", "vu-thanh-an":"Vũ Thành An","nhat-sinh":"Nhất Sinh","Tuan-Dung":"Tuấn Dũng", "nguyen-trung-cang":"Nguyễn Trung Can",
+"tu-nhi":"Tú Nhi","bossa-nova":"Bossa Nova", "luu-hong":"Lưu Hồng", "vu-thanh-an":"Vũ Thành An",
+    "nhat-sinh":"Nhất Sinh","Tuan-Dung":"Tuấn Dũng", "nguyen-trung-cang":"Nguyễn Trung Can",
  // ...thêm các slug khác
   };
  const normalize = text => text.trim().toLowerCase();
