@@ -1,0 +1,40 @@
+  
+<script type='text/javascript'>
+//<![CDATA[
+document.addEventListener("DOMContentLoaded", function() {
+  const entryLabels = document.querySelector(".entry-labels");
+  if (!entryLabels) return;
+
+  // Danh sách nhóm
+  const giaiDieuList = ["Valse", "slow", "slow-ballad", "disco", "Bossa-nova", "Twist", "slow-rock", "rock", "slow-surf", "habanera", "Rap", "bolero", "blues", "chachacha", "ballade","boston","fox", ];
+  const theLoaiList = ["nhac-tre", "Nhac-Que-Huong", "nhac-tru-tinh","Nhac-Tru-Tinh","Nhac-Vang",];
+
+  const sangTacList = ["An-Clock", "An-thi", "An-Thuyen", "Anh-Bang", "Anh-Duong", "Anh-Rong", "anh-tuan", "Anh-Viet-Thanh", "Anh-Viet-Thu", "Bac-Son", "bach-van","Bang-Giang","Bao-Chan","Bao-Chung","Bao-Phuc","Bao-Quan","bao-thach","Binh-Nguyen","Can-vinh","Cao Minh Thu","Cao-Van-Lau","Cao-Viet-Bach","Chau-Dang-Khoa","Chau-ky","chau-minh-tuan","Chinh-Huu","Da-Cam","Da-Ly-Vu","Dac-Chung","Dai-Phuong-Trang","danhka","Dat-G","datkaa","DC-Tam","Den-Vau","Dien-An","Dieu-Kien","Dieu-Tuyet","Dieu-Van","Dinh-Tram-Ca","Dinh-Van","do-bao","Do-kim-bang","Do-Le","Do-Nhuan","do-phuong","Do-Trung-Quan","Doan-Hieu"," Doan-Nho","Dong-Giao","Dong-Thien-Duc","DTAP","Duc-Huy","Duc-Nha","Duc-Tri","Duong-Khac-Linh","duong-yen-phi","Duy-Khiem","Duy-Manh","Duy-quang","Duy-Thai","Duy-vo","Dzung-Chinh","Gia-Quan","Giao-Tien","Ha-Hai-Dang","Ha-Phuong","ha-thanh","ha-vu","hamlet-truong","Han-Chau","Ho-Bac","Hoài Lan","Hoai-An","Hoai-An-2","Hoai-Linh","Hoan-Van-Hiep","Hoang-Ha","hoang-hiep","Hoang-Phuong","Hoang-Thi-Tho","Hoang-Viet","Hong-Dang","Hong-Quan","hong-truc","hong-van","Hong-Xuong-Long","hua-kim-tuyen","Huy-Phuong","Huy-Thuc","Huy-Tuan","huynh-anh","Huynh-Gia-Quy","Huynh-Huyen-Nang","huynh-jame","Huynh-van","justatee","Karick","Kha-Hiep","Khac-Hung","Khac-Viet","Khanh-An","Khanh-Bang","Khanh-Cuong","khanh-don","khanh-duy","khanh-ha","KICM","Kim-Minh-Huy","kim-anh","Kim-Tuan","La-Phong-Lam","Lac-An","Lam-Chu-Min","Lam-Hoang","Lam-Phuong","lan-phuong"];
+
+  const caSiList = ["A-Tuan", "ACMN", "Ahuy", "akira-phan", "Anh-khang", "Anh-Kiet", "Anh-Quan-Idol", "Anh-Tho", "anh-tu", "axn", "bach-cong-khanh","bang-chau", "bang-cuong"," Bang-Kieu","bang-tam","bao-anh"," Bao-Thy","Bich-Phuong","Bin","Bui-Anh-Tuan","Bui-Lan-Huong","Bui-Vinh-Phuc","Cam-Ly","cam-van"," cao-bao-trinh","Cao-Thai-Son","Chau-Gia-Kiet","chau-khai-phong","chau-viet-cuong","Che-Linh","chi-dan","Chi-Pu","chi-tai","Chu Minh K","Chu-bin","chu-thuy-quynh","Dam-Vinh-Hung","Dan-Nguyen","dan-thanh","Dan-Truong","Dang-Khoi","Danh-Zoram"," Dat-G","dat-long-vinh","Den-Vau","Dickson-Nguyen","Dien-Thai-Toan","diep-thanh-thanh","dieu-huong","Dieu-Kien","Dinh-Dung","Dinh-Manh-Ninh","Dinh-Tung-Huy","Doan-Lam","Doan-Trang","Don-Ho","Dong-Nhi","Du-Uyen","duc-phuc","Duc-tuan","Dung-Hoang-Pham","Duong-Ai-Vy", "Duong-Ngoc-Thai","Duong-trieu-vu","duong-truong-giang"," Duy-Khanh","Duy-Manh","Erik","Finn T","Giang-Hong-Ngoc",Giang-nguyen","giao-linh","Gold MK","H2K","Ha-Anh-Tuan","ha-nhi","hai-bang","hamlet-truong","Han-Thai-Tu","Hana-Cam-Tien","Hari-won","HAT","hien-ho","hien-thuc","Hieu-Thu-Hai","HKT","ho-duy-minh","Ho-Ngoc-Ha","Ho-Quang-Hieu","Ho-Quynh-Huong","Ho-Viet-Trung","hoa-minzy","Hoa-Vinh","Hoai-Lam","Hoang-Anh","Hoang-Chau","hoang-hai","hoang-lan","hoang-oanh","hoang-thuy-linh","Hoang-Trang","Hoang-Van","Hoang-Yen","Hoang-Yen-Chipi","Holy Thắng","hong-ngoc","Hong-Nhung","hong-thanh","hung-cuong","huong-giang","huong-lan","Huong-Luzz","Huong-ly","huong-tram","huynh-ai-vy","huynh-jame","HuyR","jack","Jimmii-Nguyen","Jusky-San","justatee","Karick","kasim-hoang-vu","kay-tran","Keyo","Khac-Hung","Khac-Viet","Khai-Dang","khang-viet","khanh-don","khanh-linh","Khanh-Ly","Khanh-Ngoc","Khanh-Phuong","khanh-thi","khoi-my","khong-tu-quynh","KICM","Kim-Tu-Long","Ku-Vang","Kyo-York","La-Phong-Lam","la-thang","LaLa-Tran","Lam-Chan-Huy","Lam-Chan-Khang","lam-chi-khanh","Lam-Hung","Lam-Nhat-Tien","Lam-Truong","Lam-Vu","Lan-ngoc","lan-nha",];
+
+  // Lấy tất cả thẻ <a> gốc
+  const links = [...entryLabels.querySelectorAll("a.label-link")];
+
+  let caSi = [], giaiDieu = [], sangTac = [], theLoai = [];
+
+  links.forEach(link => {
+    let name = link.textContent.trim();
+    if (caSiList.includes(name)) caSi.push(link.outerHTML);
+    else if (giaiDieuList.includes(name)) giaiDieu.push(link.outerHTML);
+    else if (sangTacList.includes(name)) sangTac.push(link.outerHTML);
+    else if (theLoaiList.includes(name)) theLoai.push(link.outerHTML);
+  });
+
+  // Tạo HTML mới
+  let html = "<div class='custom-tags'>";
+  if (theLoai.length) html += "<div class='tag-row'>Thể Loại: " + theLoai.join(", ") + " Điệu: " + giaiDieu.join(", ") +" </div>";
+  if (sangTac.length) html += "<div class='tag-row'>Sáng tác: " + sangTac.join(", ") +" </div>";
+  if (caSi.length) html += "<div class='tag-row'> Ca sĩ: " + caSi.join(" ") + "</div>";
+  html += "</div>";
+
+  // Ghi đè lên block cũ
+  entryLabels.innerHTML = html;
+});
+//]]>
+</script>
