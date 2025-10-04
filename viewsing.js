@@ -141,17 +141,23 @@ document.addEventListener("DOMContentLoaded", function() {
  "sy-luan": "Sỹ Luân", "trung-ngon": "Trung Ngon", "truong-dan-huy": "Trương Đan Huy", "vu-quoc-viet": "Vũ Quốc Việt", "weboys": "Weboys", "yanbi": "Yanbi", "bang-cuong": "Bằng Cường", "ha-nhi": "Hà Nhi", "hien-ho": "Hiền Hồ", "hoang-thuy-linh": "Hoàng Thuỳ Linh",
  "huong-tram": "Hương Tràm", "huynh-ai-vy": "Huỳnh Ái Vy", "nam-cuong": "Nam Cường", "ngo-quoc-linh": "Ngô Quốc Linh", "nguyen-thac-bao-ngoc": "Nguyễn Thạc Bảo Ngọc", "nhat-kim-anh": "Nhật Kim Anh", "thanh-ngoc": "Thanh Ngọc", "tien-tien": "Tiên Tiên",
  "truong-the-vinh": "Trương Thế Vinh", "uyen-trang": "Uyên Trang", "vu-cat-tuong": "Vũ Cát Tường", "acmn": "ACMN", "binz": "Binz", "bui-lan-huong": "Bùi Lan Hương", "dang-khoi": "Đăng Khôi", "hat": "HAT", "hoa-vinh": "Hoa Vinh", "huyr": "HuyR", "jusky-san": "Jusky San", 
-"kicm": "KICM", "lam-vu": "Lâm Vũ", "luu-gia-bao": "Lưu Gia Bảo", "mbk": "MBK", "min": "Min", "minh-vuong-m4u": "Minh Vương M4U", "mr-t": "Mr T", "myra-tran": "Myra Trần", "ngoc-khue": "Ngọc Khuê", "nguyen-phi-hung": "Nguyễn Phi Hùng", "nguyen-dinh-vu": "Nguyễn Đình Vũ",
+"kicm": "KICM", "lam-vu": "Lâm Vũ", "luu-gia-bao": "Lưu Gia Bảo", "mbk": "MBK", "min": "Min", "minh-vuong-m4u": "Minh Vương M4U", "mr-t": "Mr T", "myra-tran": "Myra Trần", "ngoc-khue": "Ngọc Khuê", "nguyen-phi-hung": "Nguyễn Phi Hùng", "nguyen-dinh-vu": "Nguyễn Đình Vũ", 
     "phuong-vy": "Phương Vy", "phao": "Pháo", "quan-ap": "Quân AP", "quang-hung-masterd": "Quang Hùng MasterD", "suboi": "Suboi", "thai-trinh": "Thái Trinh", "thanh-bui": "Thanh Bùi", "thai-tuyet-tram": "Thái Tuyết Trâm", "tina-ho": "Tina Ho", 
 "truong-quynh-anh": "Trương Quỳnh Anh", "uyen-linh": "Uyên Linh", "viet-khang": "Việt Khang", "wanbi-tuan-anh": "Wanbi Tuấn Anh", "y-moan": "Y Moan", "chau-viet-cuong": "Châu Việt Cường", "danhka": "Danhka", "dat-long-vinh": "Đạt Long Vinh", 
+
 "hamlet-truong": "Hamlet Trương", "hoang-hai": "Hoàng Hải", "kay-tran": "Kay Trần", "mat-ngoc": "Mắt Ngọc", "mono": "Mono", "nguyen-dinh-vu": "Nguyễn Đình Vũ", "phuong-thao": "Phương Thảo", "son-ca": "Sơn Ca", "tri-hai": "Trí Hải", "trieu-hoang": "Triệu Hoàng",
  "trong-hieu": "Trọng Hiếu", "uyen-trang": "Uyên Trang", "dinh-manh-ninh": "Đinh Mạnh Ninh", "dien-thai-toan": "Điền Thái Toàn", "doan-lam": "Đoàn Lâm","quang-le": "Quang Lê","kim-tu-long":"Kim Tử Long", "ku-vang":"Ku Vàng", "nhac-cuoi":"Nhạc Đám Cưới",
 "nhac-che":"Nhạc Chế", "nhac-xuan":"Nhạc Xuân", "hoai-an-2":"Hoài An (Trẻ)", "ngoc-chau":"Ngọc Châu", "y-phon-ksor":"Y Phôn Ksor","huy-tuan":"Huy Tuấn", "duc-huy":"Đức Huy", "le-quang":"Lê Quang","mrsiro":"Mr Siro", "tim":" Tim (Cát Vũ)", 
 "thai-khang":"Thái Khang", "thanh-son":"Thanh Sơn", "dinh-van":"Đình Văn", "vo-thien-thanh":"Võ Thiện Thanh", "tran-minh-phi":"Trần Minh Phi", "lu-nhat-vu":"Lư Nhất Vũ", "hoang-hiep":"Hoàng Hiệp", "ngan-giang":"Ngân Giang", "nguyen-cuong":"Nguyễn Cường",
 "son-ha":"Sơn Hạ", "trinh-dinh-quang":"Trịnh Đình Quang","truong-le":"Trường Lê", "huy-thuc":"Huy Thục", "le-chi-trung":"Lê Chí Trung", "truong-le-son":"Trương Lê Sơn", "pho-duc-phuong":"Phó Đức Phương", "thai-hung":"Thái Hùng",
 "vo-dong-dien":"Võ Đông Điền", "bao-thach":"Bảo Thạch", "chau-dang-khoa":"Châu Đăng Khoa", "hua-kim-tuyen":"Hứa Kim Tuyền", "pham-dinh-chuong":"Phạm Đình Chương", "manh-quynh":"Mạnh Quỳnh", "thanh-tung":"Thanh Tùng", "truc-phuong":"Trúc Phương",
-"tu-nhi":"Tú Nhi","bossa-nova":"Bossa Nova", "luu-hong":"Lưu Hồng", "vu-thanh-an":"Vũ Thành An",
-    "nhat-sinh":"Nhất Sinh","Tuan-Dung":"Tuấn Dũng", "nguyen-trung-cang":"Nguyễn Trung Can",
+"tu-nhi":"Tú Nhi","bossa-nova":"Bossa Nova", "luu-hong":"Lưu Hồng", "vu-thanh-an":"Vũ Thành An","nhat-sinh":"Nhất Sinh","giao-linh":"Giao Linh", "le-thu":"Lệ Thu", "nhat-trung":"Nhật Trung","nhat-truong":"Nhật Trường","slow-ballad": "Slow Ballade",
+"tuan-dung": "Tuấn Dũng","rumba": "Rumba", "disco": "Disco", "nhac-ngoai":"Nhạc Ngoại", "pasodope":"Pasodope", "thien-nhan":"Thiện Nhân","giao-tien":"Giao Tiên","lan-song-xanh":"Làn Sóng Xanh","nguyen-minh-cuong":"Nguyễn Minh Cường",
+
+"duc-tuan":"Đức Tuấn", "duy-quang":"Duy Quang", "don-ho":"Don Hồ", "thai-thanh":"Thái Thanh", "thanh-lan":"Thanh Lan", "thu-phuong":"Thu Phương","trong-tan":"Trọng Tấn","phan-lac-hoa":"Phan Lạc Hoa","tran-chung":"Trần Chung",
+    "march":"March","pham-truong":"Phạm Trưởng", "slow-surf":"Slow Surf","nguyen-duc-toan":"Nguyễn Đức Toàn","thai-chau":"Thái Châu", "pop":"Pop","le-dung":"Lê Dũng","trong-dai":"Trọng Đài","vinh-su":"Vinh Sử","pham-manh-cuong":"Phạm Mạnh Cương","thuc-dang":"Thúc Đăng",
+    "ha-phuong":"Hà Phương","hong-dang":"Hồng Đăng","hoan-van-hiep":"Hoàng Văn Hiệp","trung-ngon":"Trung Ngon","luong-duy-thang":"Lương Duy Thắng","minh-vuong":"Minh Vương","pham-chi-trung":"Phạm Chí Trung","nhac-dan-toc":"Nhạc Dân Tộc","thy-linh":"Thy Linh",
+    "nguyen-huu-tri":"Nguyễn Hữu Trí","long-ho-huynh":"Long Họ Huỳnh","tram-tu-thien":"Trầm Tử Thiên","tango":"Tango",
  // ...thêm các slug khác
   };
  const normalize = text => text.trim().toLowerCase();
