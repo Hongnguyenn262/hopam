@@ -54,6 +54,8 @@ const chordShapes = {
   "Asus2":["Asus2","Asus2:2","Asus2:3","Asus2:4","Asus2:5"],
   "Cmaj7":["Cmaj7","Cmaj7:2","Cmaj7:3","Cmaj7:4","Cmaj7:5"],
   "Bsus4":["Bsus4","Bsus4:2","Bsus4:3","Bsus4:4","Bsus4:5"],
+  "Gm6":["Gm6","Gm6:2","Gm6:3","Gm6:4","Gm6:5"],
+  "Dmaj7":["Dmaj7","Dmaj7:2","Dmaj7:3","Dmaj7:4","Dmaj7:5"],
 };
 
 /* ===== Biến dùng chung ===== */
