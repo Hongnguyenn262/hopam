@@ -1,0 +1,22 @@
+(function () {
+  const API_URL = &quot;https://script.google.com/macros/s/AKfycbxqQ3csvAMq_8JiFbDtQfLIvxrDDG3Wz3LaWollYGBb8yaVIbrBSEE-_5ZjXjzlqfX8/exec&quot;;
+  async function updateViews() {
+  const containerEl = document.querySelector(&quot;#luot-xem&quot;);
+  if (!containerEl) return;
+  const counterEl = document.createElement(&quot;span&quot;);
+  counterEl.style.fontSize = &quot;11px&quot;;
+  counterEl.style.color = &quot;#666&quot;;
+  counterEl.style.marginLeft = &quot;10px&quot;;
+  counterEl.innerText = &quot;👁 ...&quot;;
+  containerEl.appendChild(counterEl);
+  try {
+    const href = location.href;
+    const res = await fetch(`${API_URL}?url=${encodeURIComponent(href)}`);
+    const data = await res.json();
+    counterEl.innerText = `👁 ${data.views}`;
+  } catch (e) {
+    counterEl.innerText = &quot;👁 N/A&quot;;
+  }
+  }
+  document.addEventListener(&quot;DOMContentLoaded&quot;, updateViews);
+})();
