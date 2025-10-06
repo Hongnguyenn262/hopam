@@ -62,3 +62,24 @@ document.addEventListener("DOMContentLoaded", function() {
   `;
   document.head.appendChild(style);
 })();
+
+// nút youtube
+document.addEventListener(&quot;DOMContentLoaded&quot;, function () {
+document.querySelectorAll(&quot;iframe[src*=&#39;youtube.com/embed&#39;]&quot;).forEach(function (iframe) {
+    try {
+ let src = iframe.getAttribute(&quot;src&quot;);
+      let match = src.match(/embed\/([^?&amp;]+)/);
+      if (!match) return;
+      let videoId = match[1];
+ let liteYT = document.createElement(&quot;lite-youtube&quot;);
+      liteYT.setAttribute(&quot;videoid&quot;, videoId);
+      liteYT.style.width = &quot;100%&quot;;
+      liteYT.style.aspectRatio = &quot;16/9&quot;; // Tự động responsive
+if (iframe.getAttribute(&quot;class&quot;)) liteYT.setAttribute(&quot;class&quot;, iframe.getAttribute(&quot;class&quot;));
+      if (iframe.getAttribute(&quot;style&quot;)) liteYT.setAttribute(&quot;style&quot;, iframe.getAttribute(&quot;style&quot;));
+iframe.parentNode.replaceChild(liteYT, iframe);
+    } catch (e) {
+      console.warn(&quot;Lite YouTube replace error:&quot;, e);
+    }
+  });
+});
