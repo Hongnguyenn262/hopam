@@ -1,4 +1,91 @@
-// ============================================================
+// đăng nhập - đăng ký - yêu thích
+const firebaseConfig={apiKey:"AIzaSyD8wwbYCF1e2Yh--udDvOSPWx40Ga3qBKU",authDomain:"login-timhopam.firebaseapp.com",projectId:"login-timhopam",storageBucket:"login-timhopam.firebasestorage.app",messagingSenderId:"588448339429",appId:"1:588448339429:web:07514982e72c5726150b0c",measurementId:"G-LNFSSSMKEL"};
+if(!firebase.apps.length) firebase.initializeApp(firebaseConfig);
+const auth=firebase.auth(), db=firebase.firestore();
+
+/* ---- NEW: CSS & chỗ gắn icon mobile ---- */
+(function injectMobileUserSpot(){
+  // CSS
+  if(!document.getElementById("mobile-user-spot-style")){
+    const st=document.createElement("style");
+    st.id="mobile-user-spot-style";
+    st.textContent = `
+      @media (max-width:768px){
+        #user-nav{display:none!important;}
+        .mobile-user-spot{display:block;position:absolute;right:12px;top:12px;z-index:20}
+        .mobile-user-spot .user-icon{
+          display:inline-flex;align-items:center;justify-content:center;
+          width:60px;height:36px;border-radius:8px;color:#38761d;
+          text-decoration:none;font-size:18px;line-height:1;
+        }
+      }
+      @media (min-width:769px){ .mobile-user-spot{display:none!important;} }
+    `;
+    document.head.appendChild(st);
+  }
+  // Container (đặt trong header-items nếu có, fallback flex-right)
+  const host = document.querySelector(".header-items") || document.querySelector(".flex-right") || document.body;
+  if(host && !document.getElementById("mobile-user-spot")){
+    const spot=document.createElement("div");
+    spot.id="mobile-user-spot"; spot.className="mobile-user-spot";
+    host.appendChild(spot);
+  }
+})();
+
+/* ---- Lưu bài yêu thích (giữ nguyên) ---- */
+function saveFavorite(uid,title,url){
+  return db.collection("favorites").doc(uid).collection("songs").add({
+    title, url, createdAt: firebase.firestore.FieldValue.serverTimestamp()
+  });
+}
+
+/* ---- Render nav (desktop) + icon (mobile) ---- */
+function renderUserNav(user){
+  // Desktop giữ nguyên như cũ
+  const desktopHtml = user
+    ? `<span class="greeting">👋 Xin chào, <b>${user.email}</b></span><div style="margin-left:50px;"><a href="/p/user.html">Trang cá nhân</a> | <a href="#" id="logout-link">Đăng xuất</a></div>`
+    : `<span class="greeting"><a href="/p/dang-nhap.html">Đăng nhập</a> | <a href="/p/dang-ky.html">Đăng ký</a></span>`;
+
+  ["#user-nav","#main-mobile-nav #user-nav"].forEach(sel=>{
+    const el=document.querySelector(sel);
+    if(el) el.innerHTML=desktopHtml;
+  });
+
+  // Mobile icon: bên phải logo
+  const mobileSpot=document.getElementById("mobile-user-spot");
+  if(mobileSpot){
+    mobileSpot.innerHTML = user
+      ? `<a href="/p/user.html" class="user-icon" aria-label="Trang cá nhân"><i style="  font-size: 12px;  MARGIN: 7px;   margin-top: 13px;  font-weight: BOLD;">Hi !</i> 💁</a>`
+      : `<a href="/p/dang-nhap.html" class="user-icon" aria-label="Đăng nhập"> 👤</a>`;
+  }
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  auth.onAuthStateChanged(renderUserNav);
+  document.addEventListener("click",e=>{
+    const t=e.target;
+
+    // Lưu yêu thích (giữ nguyên)
+    if(t.classList.contains("btn-favorite")){
+      const title=t.dataset.title, url=t.dataset.url, user=auth.currentUser;
+      if(!user){
+        alert("⚠️ Bạn cần đăng nhập để lưu bài hát!");
+        location.href="/p/dang-nhap.html";
+        return;
+      }
+      saveFavorite(user.uid,title,url)
+        .then(()=>alert(`✅ Đã thêm '${title}' vào danh sách yêu thích!`))
+        .catch(err=>alert("❌ Lỗi: "+err.message));
+    }
+
+    // Logout (giữ nguyên)
+    if(t.id==="logout-link"){
+      e.preventDefault();
+      auth.signOut().then(()=>location.href="/");
+    }
+  });
+});
+
 //  Label Việt hóa + Gom nhóm cho Blogspot (hoạt động qua CDN)
 // ============================================================
 
