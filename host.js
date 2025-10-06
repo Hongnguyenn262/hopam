@@ -25,25 +25,40 @@
   document.addEventListener("DOMContentLoaded", updateViews);
 })();
 // hợp âm sử dụng trong bài:
-document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
-  // Giới hạn chỉ quét trong phần nội dung bài viết
-  const postBody = document.querySelector(&quot;.post-body&quot;);
-  if (!postBody) return; // nếu không có thì thoát
+// ==============================================
+//  🔸 Tô màu tiêu đề "HỢP ÂM SỬ DỤNG TRONG BÀI"
+// ==============================================
 
-  postBody.querySelectorAll(&quot;p, div, span&quot;).forEach(function(el) {
-    if (el.childNodes.length) {
-      el.childNodes.forEach(function(node) {
-        if (node.nodeType === 3 &amp;&amp; node.textContent.includes(&quot;HỢP ÂM SỬ DỤNG TRONG BÀI&quot;)) {
-          const newHTML = node.textContent.replace(
-            &quot;HỢP ÂM SỬ DỤNG TRONG BÀI&quot;,
-            &quot;<span class='highlight-chord-title'>HỢP ÂM SỬ DỤNG TRONG BÀI</span>&quot;
-          );
-          const wrapper = document.createElement(&quot;span&quot;);
-          wrapper.innerHTML = newHTML;
-          node.replaceWith(wrapper);
-        }
-      });
-    }
+document.addEventListener("DOMContentLoaded", function() {
+  const postBody = document.querySelector(".post-body");
+  if (!postBody) return; // chỉ chạy trong trang bài viết
+
+  postBody.querySelectorAll("p, div, span").forEach(function(el) {
+    el.childNodes.forEach(function(node) {
+      if (node.nodeType === 3 && node.textContent.includes("HỢP ÂM SỬ DỤNG TRONG BÀI")) {
+        const newHTML = node.textContent.replace(
+          "HỢP ÂM SỬ DỤNG TRONG BÀI",
+          "<span class='highlight-chord-title'>HỢP ÂM SỬ DỤNG TRONG BÀI</span>"
+        );
+        const wrapper = document.createElement("span");
+        wrapper.innerHTML = newHTML;
+        node.replaceWith(wrapper);
+      }
+    });
   });
 });
 
+// CSS highlight chèn tự động nếu chưa có
+(function() {
+  if (document.getElementById("highlight-style")) return;
+  const style = document.createElement("style");
+  style.id = "highlight-style";
+  style.textContent = `
+    .highlight-chord-title {
+      font-weight: bold;
+      color: #38761d;
+      font-size: 16px;
+    }
+  `;
+  document.head.appendChild(style);
+})();
