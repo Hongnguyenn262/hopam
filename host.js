@@ -24,3 +24,26 @@
 
   document.addEventListener("DOMContentLoaded", updateViews);
 })();
+// hợp âm sử dụng trong bài:
+document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
+  // Giới hạn chỉ quét trong phần nội dung bài viết
+  const postBody = document.querySelector(&quot;.post-body&quot;);
+  if (!postBody) return; // nếu không có thì thoát
+
+  postBody.querySelectorAll(&quot;p, div, span&quot;).forEach(function(el) {
+    if (el.childNodes.length) {
+      el.childNodes.forEach(function(node) {
+        if (node.nodeType === 3 &amp;&amp; node.textContent.includes(&quot;HỢP ÂM SỬ DỤNG TRONG BÀI&quot;)) {
+          const newHTML = node.textContent.replace(
+            &quot;HỢP ÂM SỬ DỤNG TRONG BÀI&quot;,
+            &quot;<span class='highlight-chord-title'>HỢP ÂM SỬ DỤNG TRONG BÀI</span>&quot;
+          );
+          const wrapper = document.createElement(&quot;span&quot;);
+          wrapper.innerHTML = newHTML;
+          node.replaceWith(wrapper);
+        }
+      });
+    }
+  });
+});
+
