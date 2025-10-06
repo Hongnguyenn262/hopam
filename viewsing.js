@@ -92,10 +92,14 @@ document.addEventListener("DOMContentLoaded", function() {
   // ========================================================
   // 2️⃣ Gom nhóm cho phần entry-labels (trong bài viết)
   // ========================================================
-  const entryLabels = document.querySelector(".entry-labels");
-  if (!entryLabels) return;
+   // ========================================================
+  // 2️⃣ Gom nhóm cho phần entry-labels (trong bài viết)
+  // ========================================================
+  function groupEntryLabels() {
+    const entryLabels = document.querySelector(".entry-labels");
+    if (!entryLabels) return; // nếu chưa có thì bỏ qua
 
-  const groups = {
+   const groups = {
     nhacsi: {
       title: "✍️ <strong>Sáng tác:</strong>",
       list: ["trinh-cong-son","lam-phuong","nguyen-hong-thuan","nguyen-van-chung","pham-duy","anh-bang","minh-khang","chau-ky","vu-thanh-an","phi-bang","nhat-trung","tran-tien","ngoc-son","hoai-an-2","son-tung-mtp","tran-thien-thanh","quang-huy","huy-tuan","nal","nguyen-hoai-anh","dong-thien-duc","ngo-thuy-mien","khac-viet","thanh-son","den-vau","duy-manh","thai-khang","duc-tri","truc-phuong", "dinh-van","hong-xuong-long","jimmii-nguyen","tran-lap", "dat-g","le-bao-binh","le-quang","minh-vy","nguyen-hai-phong","quoc-dung","dinh-dung","minh-ky","pham-truong","phu-quang", "to-thanh-tung","vo-thien-thanh","ngoc-chau", "dai-phuong-trang","dieu-kien","duc-huy","hoai-an","hoai-linh","hoang-thi-tho","khai-dang","pham-khanh-hung","phan-manh-quynh","thanh-tung","thuan-yen","xuan-hong","chi-tai","le-minh-son","bao-chan","duong-khac-linh","tang-duy-tan","tien-cookie","vu-duy-khanh","vu-quoc-viet","khanh-bang","luong-bang-quang","nguyen-ngoc-thien","phan-huynh-dieu","quoc-bao","the-hien","tuan-khanh","bao-thach","the-son","ha-phuong","lu-nhat-vu","quach-beam","song-ngoc","tran-minh-phi","trinh-nam-son","truong-quang-tuan","hoang-hiep","tu-nhi","anh-viet-thu","bang-giang","dinh-tung-huy", "la-phong-lam","ngan-giang","nguyen-cuong","nguyen-ha","nguyen-kim-tuan", "pham-minh-tuan","quoc-khanh","son-ha","thai-thinh","thanh-dat","thanh-hung","trinh-dinh-quang","trung-duc","truong-le","viet-hoang","bang-tam","huynh-jame","khanh-don","nguyen-duc-cuong","pham-hong-phuoc", "anh-khang","dc-tam","do-trung-quan","hoang-viet","huy-thuc","karick", "le-chi-trung","le-cuong","le-dinh","leeeee","long-ho-huynh", "nguyen-minh-cuong","nguyen-nhat-huy","nhat-sinh", "pham-the-my","pham-toan-thang","phan-lac-hoa","thai-hoc","thai-hung", "tran-le-quynh","trinh-lam-ngan", "truong-le-son","truong-sa","tu-huy","tuong-van","van-cao","vinh-su","vinh-tam","vu-hoang","vo-hoai-phuc","danhka","datkaa","justatee","le-huu-ha","nguyen-dinh-vu","an-clock","an-thuyen","bac-son","bao-phuc","bin","dac-chung","dickson-nguyen","dong-giao","duy-khiem","khac-hung", "le-ba-vinh","le-minh-bang","mai-chau","manh-phat","minh-chau","minh-nhien","nguyen-anh-9","nguyen-minh-anh","nguyen-van-ti","nguyen-vi","nguyen-vinh-tien","onlyc","pham-tuyen","phan-duy-anh", "phat-ho","pho-duc-phuong","quan-anh-vuong","quoc-hung","song-tra","sy-luan","tvk","tam-anh","thong-dat","tran-chung","tran-long-an", "tran-trinh","tran-vu-an-binh","trinh-hung","trung-ngon","viet-anh","vo-dong-dien","xuan-tien", "chau-viet-cuong","do-bao","ha-thanh","ho-duy-minh","nguyen-trung-cang","pham-bao-nam","tang-nhat-tue","tien-tien", "tran-que-son","vu-cat-tuong","a-tuan","ahuy","an-thi","anh-duong","anh-rong","anh-viet-thanh","bao-chung","bao-quan","binh-nguyen", "binz","can-vinh","cao-minh-thu","cao-van-lau","cao-viet-bach","chau-dang-khoa", "chinh-huu","chu-minh-k","dtap","da-cam","da-ly-vu","danh-zoram","dien-an", "dieu-van","dieu-tuyet","dinh-tram-ca","do-le","do-nhuan","do-kim-bang", "doan-hieu","doan-nho","duc-nha","duy-thai","duy-vo","dzung-chinh","finn-t","gia-quan", "gold-mk","ha-hai-dang","ho-bac","hoan-van-hiep","hoang-ha", "hoang-phuong","hoang-van","holy-thang","hong-dang","hong-quan","hoai-lan","hung-quan","huy-phuong","huyr","huynh-gia-quy","huynh-huyen-nang","huynh-van","jokes-bii","kicm", "kha-hiep","khanh-cuong","kim-minh-huy","kim-tuan","lac-an","lam-chu-min","lam-hoang",
@@ -116,36 +120,45 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   };
 
-  const results = { nhacsi: [], theloai: [], giaidieu: [], casi: [] };
-  const links = [...entryLabels.querySelectorAll("a.label-link")];
+    const results = { nhacsi: [], theloai: [], giaidieu: [], casi: [] };
+    const links = [...entryLabels.querySelectorAll("a.label-link")];
 
-  links.forEach(link => {
-    let slug = link.href.split("/label/")[1]?.split("?")[0].toLowerCase();
-    let text = link.textContent.trim();
+    links.forEach(link => {
+      let slug = link.href.split("/label/")[1]?.split("?")[0].toLowerCase();
+      let text = link.textContent.trim();
 
-    // Việt hoá nếu có trong map
-    if (labelMap[slug]) text = labelMap[slug];
+      // Việt hoá nếu có trong map
+      if (labelMap[slug]) text = labelMap[slug];
 
-    // Tạo lại thẻ <a> với text Việt hoá
-    const newLink = `<a class="label-link" href="${link.href}">${text}</a>`;
+      const newLink = `<a class="label-link" href="${link.href}">${text}</a>`;
 
-    for (let key in groups) {
-      if (groups[key].list.includes(slug)) {
-        results[key].push(newLink);
-        break;
+      for (let key in groups) {
+        if (groups[key].list.includes(slug)) {
+          results[key].push(newLink);
+          return;
+        }
       }
+    });
+
+    // Xuất HTML nhóm
+    let parts = [];
+    if (results.nhacsi.length) parts.push(groups.nhacsi.title + " " + results.nhacsi.join(" "));
+    if (results.theloai.length) parts.push(groups.theloai.title + " " + results.theloai.join(" "));
+    if (results.giaidieu.length) parts.push(groups.giaidieu.title + " " + results.giaidieu.join(""));
+    if (results.casi.length) parts.push(groups.casi.title + " " + results.casi.join(""));
+
+    if (parts.length) {
+      entryLabels.innerHTML = "<div class='custom-tags'><div class='tag-row'>" + parts.join(" | ") + "</div></div>";
+    }
+  }
+
+  // 🔁 Quan sát DOM, khi entry-labels xuất hiện thì chạy groupEntryLabels()
+  const observer = new MutationObserver(() => {
+    const el = document.querySelector(".entry-labels");
+    if (el && el.querySelector("a.label-link")) {
+      observer.disconnect();
+      groupEntryLabels();
     }
   });
 
-  // Xuất ra 1 dòng gọn gàng
-  let parts = [];
-  if (results.nhacsi.length) parts.push(groups.nhacsi.title + " " + results.nhacsi.join(" "));
-  if (results.theloai.length) parts.push(groups.theloai.title + " " + results.theloai.join(" "));
-  if (results.giaidieu.length) parts.push(groups.giaidieu.title + " " + results.giaidieu.join(""));
-  if (results.casi.length) parts.push(groups.casi.title + " " + results.casi.join(""));
-
-  if (parts.length) {
-    entryLabels.innerHTML = "<div class='custom-tags'><div class='tag-row'>" + parts.join(" | ") + "</div></div>";
-  }
-
-});
+  observer.observe(document.body, { childList: true, subtree: true });
