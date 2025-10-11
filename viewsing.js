@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function() {
     },
     giaidieu: {
       title: "🎶 <strong>Điệu:</strong>",
-      list: ["slow-rock","ballade","chachacha","blues","slow-ballad","bossa-nova","habanera","boston","slow","bolero","rap","valse","disco", "rumba","pasodope", "march","slow-surf","pop","tango"]
+      list: ["slow-rock","ballade","chachacha","blues","slow-ballad","bossa-nova","habanera","boston","slow","bolero","rap","valse","disco", "rumba","pasodope", "march","slow-surf","pop","tango","Twist"]
     },
     casi: {
       title: "🎤 <strong>Ca sĩ:</strong>",
