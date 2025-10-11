@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function() {
 "duc-tuan":"Đức Tuấn", "duy-quang":"Duy Quang", "don-ho":"Don Hồ", "thai-thanh":"Thái Thanh", "thanh-lan":"Thanh Lan", "thu-phuong":"Thu Phương","trong-tan":"Trọng Tấn","phan-lac-hoa":"Phan Lạc Hoa","tran-chung":"Trần Chung", "march":"March","pham-truong":"Phạm Trưởng", 
 "slow-surf":"Slow Surf","nguyen-duc-toan":"Nguyễn Đức Toàn","thai-chau":"Thái Châu", "pop":"Pop","le-dung":"Lê Dũng","trong-dai":"Trọng Đài","vinh-su":"Vinh Sử","pham-manh-cuong":"Phạm Mạnh Cương","thuc-dang":"Thúc Đăng","ha-phuong":"Hà Phương",
 "hong-dang":"Hồng Đăng","hoan-van-hiep":"Hoàng Văn Hiệp","trung-ngon":"Trung Ngon","luong-duy-thang":"Lương Duy Thắng","minh-vuong":"Minh Vương","pham-chi-trung":"Phạm Chí Trung","nhac-dan-toc":"Nhạc Dân Tộc","thy-linh":"Thy Linh","nguyen-huu-tri":"Nguyễn Hữu Trí",
-"long-ho-huynh":"Long Họ Huỳnh","tram-tu-thien":"Trầm Tử Thiên","tango":"Tango", "y-van":"Y Vân","Twist":"Twist",
+"long-ho-huynh":"Long Họ Huỳnh","tram-tu-thien":"Trầm Tử Thiên","tango":"Tango", "y-van":"Y Vân","Twist":"Twist", "nhac-hoc-tro":"Nhạc Học Trof",
  // ...thêm các slug khác
   };
 
@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function() {
     },
     theloai: {
       title: "📂 <strong>Thể loại:</strong>",
-      list: ["nhac-que-huong","nhac-tre","nhac-tru-tinh","nhac-vang","rap","nhac-thieu-nhi","nhac-cach-mang","nhac-ngoai","nhac-hoa","nhac-dan-toc"]
+      list: ["nhac-que-huong","nhac-tre","nhac-tru-tinh","nhac-vang","rap","nhac-thieu-nhi","nhac-cach-mang","nhac-ngoai","nhac-hoa","nhac-dan-toc","nhac-hoc-tro"]
     },
     giaidieu: {
       title: "🎶 <strong>Điệu:</strong>",
